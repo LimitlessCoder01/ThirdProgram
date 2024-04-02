@@ -1,0 +1,36 @@
+package org.ink;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class DayThree {
+	
+public static void main(String[] args) {
+	
+	WebDriver driver = new ChromeDriver();
+	
+	driver.get("https://www.facebook.com");
+	
+	//Locators - 8 types -> Id,name,className, tagName, linkText, partialLinkText, cssSelector, xpath
+	// <input type="text" id="email" />
+	
+	
+//	xpath syntax : //tagname[@attributename= 'attributevalue'] -> //input[@id='email']
+	
+	WebElement username = driver.findElement(By.xpath("//input[@id='email']"));
+	
+	username.sendKeys("LimitlessCoder");
+	
+	WebElement password = driver.findElement(By.xpath("//input[@name='pass']"));
+	
+	password.sendKeys("Limitless coder");
+	
+	WebElement btn = driver.findElement(By.xpath("//button[@type='submit']"));
+	
+	btn.click();
+	
+	
+}
+}
